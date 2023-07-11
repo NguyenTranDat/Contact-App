@@ -28,14 +28,14 @@ const getContact = async (req, res) => {
 //@desc Update contact
 //@route PUT /api/contacts/:id
 //@access public
-const updateContact = (req, res) => {
+const updateContact = async (req, res) => {
     res.status(200).json({ message: `Update contact for ${req.params.id}` })
 }
 
 //@desc Delete contact
 //@route DELETE /api/contacts/:id
 //@access public
-const deleteContact = (req, res) => {
+const deleteContact = async (req, res) => {
     res.status(200).json({ message: `Delete contact for ${req.params.id}` })
 }
 
