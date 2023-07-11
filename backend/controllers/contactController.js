@@ -21,7 +21,7 @@ const createContact = async (req, res) => {
 //@desc Get contacts
 //@route GET /api/contacts/:id
 //@access public
-const getContact = (req, res) => {
+const getContact = async (req, res) => {
     res.status(200).json({ message: `Get contact for ${req.params.id}` })
 }
 
