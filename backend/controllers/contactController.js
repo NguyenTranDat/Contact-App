@@ -8,7 +8,7 @@ const getContacts = async (req, res) => {
 //@desc Create new contact
 //@route POST /api/contacts
 //@access public
-const createContact = (req, res) => {
+const createContact = async (req, res) => {
     console.log("The request body is: ",req.body);
     const {name, email, phone} = req.body
     if (!name || !email || !phone) {
