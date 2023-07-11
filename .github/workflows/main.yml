@@ -1,0 +1,11 @@
+name: Set Git avatar
+on:
+  push:
+    branches:
+      - main # replace with your branch name if different
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Git avatar
+        run: git config --global user.avatar https://github.com/$GITHUB_REPOSITORY.png
