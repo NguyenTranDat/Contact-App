@@ -24,13 +24,25 @@ const createContact = asyncHandler(async (req, res) => {
         phone
     })
     res.status(201).json(contact)
+    console.log(res.statusCode);
 })
 
 //@desc Get contacts
 //@route GET /api/contacts/:id
 //@access public
+
 const getContact = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: `Get contact for ${req.params.id}` })
+    // console.log("Hello");
+    // setTimeout
+    const contact = await Contact.findById(req.params.id);
+    console.log("Hello");
+    console.log(contact); 
+    if (!contact) {
+        res.status(404)
+        throw new Error("Contact not found");
+    }
+    // res.status(200).json({mesage: `Get contact for ${req.params.id}`});
+    res.status(200).json(contact);
 })
 
 //@desc Update contact
