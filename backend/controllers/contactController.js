@@ -72,7 +72,6 @@ const deleteContact = asyncHandler(async (req, res) => {
 
     const deletedContact = await Contact.findByIdAndDelete(req.params.id); 
     res.status(200).json(deletedContact);
-    // res.status(200).json({ message: `Delete contact for ${req.params.id}` })
 })
 
 
