@@ -13,6 +13,10 @@ const contactSchema = mongoose.Schema({
         type: String,
         require: [true, "Please add the contact phone number"]
     },
+    _id: {
+        type: Number,
+        require: [true, "Please add the id"]
+    }
 }, {
     timestamps: true
 })
