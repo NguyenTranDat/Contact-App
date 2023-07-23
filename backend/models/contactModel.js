@@ -15,7 +15,7 @@ const contactSchema = mongoose.Schema({
     },
     _id: {
         type: Number,
-        require: [true, "Please add the id"]
+        require: [true, "Please add the id"],
     }
 }, {
     timestamps: true

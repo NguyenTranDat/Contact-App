@@ -11,10 +11,16 @@ const registerUser = asyncHandler(async (req, res) => {
         res.status(400);
         throw new Error('All fields are mandatory');
     }
-    const userAvailable = await User.findOne({email});
-    if (userAvailable) {
+    const userEmail = await User.findOne({email});
+    if (userEmail) {
         res.status(400);
         throw new Error('User already registered');
+    }
+
+    const userId = await User.findOne({_id});
+    if (userId) {
+        res.status(400);
+        throw new Error('Id already existed');
     }
 
     const hashedPassord = await bcrypt.hash(password, 10);
